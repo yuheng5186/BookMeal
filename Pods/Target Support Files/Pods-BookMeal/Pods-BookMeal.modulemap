@@ -1,0 +1,6 @@
+framework module Pods_BookMeal {
+  umbrella header "Pods-BookMeal-umbrella.h"
+
+  export *
+  module * { export * }
+}
