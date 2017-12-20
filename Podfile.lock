@@ -1,12 +1,27 @@
 PODS:
   - Alamofire (4.4.0)
+  - HandyJSON (4.0.0-beta.1)
+  - IQKeyboardManagerSwift (5.0.3)
+  - Kingfisher (4.1.0)
+  - MBProgressHUD (1.0.0)
+  - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4.0)
+  - HandyJSON (~> 4.0.0-beta.1)
+  - IQKeyboardManagerSwift (~> 5.0.3)
+  - Kingfisher (~> 4.1.0)
+  - MBProgressHUD (~> 1.0.0)
+  - SnapKit (~> 4.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
+  IQKeyboardManagerSwift: e257e513744cf32123eca7061272acea0246fc83
+  Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: b32e6159041a26bdc5dd2a0127cc7828f9ae10b0
+PODFILE CHECKSUM: 9183a3730938c7d8cfb101fb893ab6925cfc7e1b
 
 COCOAPODS: 1.2.1
