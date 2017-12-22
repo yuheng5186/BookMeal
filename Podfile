@@ -10,5 +10,4 @@ pod 'HandyJSON', '~> 4.0.0-beta.1'
 pod 'Kingfisher', '~> 4.1.0'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'IQKeyboardManagerSwift', '~> 5.0.3'
-
 end

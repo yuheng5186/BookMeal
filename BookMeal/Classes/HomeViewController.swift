@@ -22,9 +22,16 @@ class HomeViewController: BaseViewController {
         
     }
     
+    @objc func logoutButtonClick(){
+        
+        let logoutVC = LoginViewController()
+//        self.navigationController?.pushViewController(logoutVC, animated: true)
+        self.navigationController?.present(logoutVC, animated: true, completion: nil)
+    }
+    
     @objc func orderButtonClick(){
         print("999999999")
-        let orderVC = LoginViewController()
+        let orderVC = BMOrderViewController()
         orderVC.title = "我的订单"
         self.navigationController?.pushViewController(orderVC, animated: true)
         
@@ -37,7 +44,7 @@ class HomeViewController: BaseViewController {
 
         self.title  = "加加点餐"
         
-        let exitItem = UIBarButtonItem(title: "退出", style: .plain, target: self, action: #selector(orderButtonClick))
+        let exitItem = UIBarButtonItem(title: "退出", style: .plain, target: self, action: #selector(logoutButtonClick))
         exitItem.tintColor = COLOR_TITLE
         exitItem.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)], for: .normal)
         self.navigationItem.leftBarButtonItem = exitItem
