@@ -1,0 +1,28 @@
+{
+    "data": {
+        "productType": [
+                        {
+                        "dateTime":"2017-12-15"
+                        "status":"待领取"
+                        "menuList":["name":"糖醋排骨","prise":"38","count":"3"]
+                        "total":"4"
+                        "totalMoney":"138"
+                        },
+                        {
+                        "dateTime":"2017-12-15"
+                        "status":"未领取"
+                        "menuList":["name":"回锅肉","prise":"26","count":"3"]
+                        "total":"3"
+                        "totalMoney":"88"
+                        },
+                        
+                        {
+                        "dateTime":"2017-12-15"
+                        "status":"已领取"
+                        "menuList":["name":"泡椒猪肝","prise":"26","count":"3"]
+                        "total":"3"
+                        "totalMoney":"98"
+                        }
+                        ]
+    }
+}

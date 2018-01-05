@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuListView" customModule="BookMeal" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="SsO-6a-ccB" customClass="MenuListView" customModule="BookMeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjf-OI-yu5">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已选早餐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coi-Al-15X">
+                            <rect key="frame" x="8" y="12" width="69.5" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Coi-Al-15X" secondAttribute="height" multiplier="8:3" id="K9i-JM-CPG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHc-ZJ-d1L">
+                            <rect key="frame" x="303.5" y="8.5" width="50.5" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="CHc-ZJ-d1L" secondAttribute="height" multiplier="23:15" id="MRI-69-Shy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="清空">
+                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zjf-OI-yu5" secondAttribute="height" multiplier="15:2" id="TRJ-AF-bJ4"/>
+                        <constraint firstItem="Coi-Al-15X" firstAttribute="leading" secondItem="zjf-OI-yu5" secondAttribute="leading" constant="8" id="X0a-bp-02o"/>
+                        <constraint firstItem="Coi-Al-15X" firstAttribute="centerY" secondItem="zjf-OI-yu5" secondAttribute="centerY" id="bcN-Gc-bQ5"/>
+                        <constraint firstItem="CHc-ZJ-d1L" firstAttribute="centerY" secondItem="zjf-OI-yu5" secondAttribute="centerY" id="eyR-7z-PhB"/>
+                        <constraint firstAttribute="trailing" secondItem="CHc-ZJ-d1L" secondAttribute="trailing" constant="21" id="mkb-6H-TQR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="CTx-A9-kca" firstAttribute="trailing" secondItem="zjf-OI-yu5" secondAttribute="trailing" id="HPV-BI-okQ"/>
+                <constraint firstItem="zjf-OI-yu5" firstAttribute="leading" secondItem="CTx-A9-kca" secondAttribute="leading" id="au3-Dw-TOt"/>
+                <constraint firstItem="zjf-OI-yu5" firstAttribute="top" secondItem="CTx-A9-kca" secondAttribute="top" id="tUY-he-LZg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="CTx-A9-kca"/>
+            <point key="canvasLocation" x="-140.5" y="40"/>
+        </view>
+    </objects>
+</document>

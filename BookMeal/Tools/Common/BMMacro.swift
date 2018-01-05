@@ -9,6 +9,14 @@
 import UIKit
 
 
+//********************** Key ***********************
+
+let KEY_FirstLaunch = "KEY_FirstLaunch"
+let KEY_Login_Status = "KEY_Login_Status"
+
+
+//********************* Screen *********************
+
 // iPhone 5
 let isIPhone_4S  = SCREEN_H == 480 ? true : false
 // iPhone 5
@@ -19,7 +27,6 @@ let isIPhone_6   = SCREEN_H == 667 ? true : false
 let isIPhone_6P  = SCREEN_H == 736 ? true : false
 // iPhone 8X
 let isIPhone_8X  = SCREEN_H == 812 ? true : false
-
 
 // 屏幕的宽
 let SCREEN_W = UIScreen.main.bounds.size.width
@@ -34,6 +41,9 @@ let margin: CGFloat             = 10.0
 let video_H                     = SCREEN_W * 12.0 / 16.0
 
 
+
+//********************* Color *********************
+
 //导航背景 橙色
 let COLOR_NAV_BG                = UIColor("ECF9FB")
 //标题颜色
@@ -44,6 +54,7 @@ let COLOR_CONTENT               = UIColor("4ab6d3")
 let COLOR_NUMBER                = UIColor("F09C13")
 
 
+let UIRate = (UIScreen.main.bounds.size.width/375)
 
 
 
