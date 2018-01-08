@@ -66,16 +66,7 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     func  initData()
     {
-        //        let path:String = (Bundle.main.path(forResource: "MenuData", ofType: "json"))!
-        //        let data:Data = try! Data(contentsOf: URL(fileURLWithPath: path))
-        //        let json:AnyObject = try!JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as AnyObject
-        //        let resultDict = json.object(forKey: "data") as! Dictionary<String,AnyObject>
-        //        let productMenuArr:[AnyObject] = resultDict["productType"] as! Array
-        //        for i:Int in 0 ..< productMenuArr.count
-        //        {
-        //            productTypeArr.append(productMenuArr[i]["typeName"] as! String)
-        //            productNameArr.append(productMenuArr[i]["productName"] as! [String] as AnyObject)
-        //        }
+        
         
     }
     

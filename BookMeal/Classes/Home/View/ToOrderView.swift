@@ -14,15 +14,20 @@ class ToOrderView: UIView {
     
     var removeShopListButtonCLick:(()->Void)!
 
+
+    static let plusButton = ToOrderView()
+    
+    
     
     @IBOutlet weak var orderCountLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var menuImageView: UIImageView!
     
     
     @IBAction func shopListButtonClick(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
-        
+//        priceLabel.layer.borderWidth 
         if sender.isSelected == true {
             
             if (self.showShopListButtonCLick != nil) {

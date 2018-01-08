@@ -30,8 +30,21 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 let screenHeight = UIScreen.main.bounds.height
 let screenWidth  = UIScreen.main.bounds.width
+
+
+protocol RightCellDelegate {
+    func btnClick(index: NSInteger ,name: String)
+}
+
+
+let LoginSucessPostNotification = "LOGIN_SUCCESS_NOTIFICATION_POST_NOTIFICATION"
+
+
 class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
 
+    var delegate: RightCellDelegate?
+
+    
     var productName:UILabel!
     var minusBtn:UIButton!
     var plusBtn:UIButton!
@@ -42,7 +55,8 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
     ///声明闭包
     var addProClosure:((UITableViewCell,Bool)->())?
     
-    
+    var plusCountClick:(()->Void)!
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.productName = UILabel(frame:CGRect(x: 15,y: 15,width: (screenWidth*0.7) - 30,height: 20))
@@ -87,6 +101,17 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
     }
     
     @objc func plusBtnClick(_ btn:UIButton){
+        
+        delegate?.btnClick(index:btn.tag ,name:btn.titleLabel!.text!)
+
+//        let center = NotificationCenter.default//创建通知
+//
+//        center.addObserver(self, selector: #selector(HomeViewController.receiveValue(_:)), name: "passValue", object: nil)//单个值得传递
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: LoginSucessPostNotification), object: false)
+
+        
+        
         let point:CGPoint = self.convert(btn.frame.origin, to: (UIApplication.shared.delegate?.window)!)
         let circleView:UIView = UIView(frame:CGRect(x: point.x,y: point.y,width: 40,height: 40))
         circleView.layer.cornerRadius = 20

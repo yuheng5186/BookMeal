@@ -79,13 +79,8 @@
                 <constraint firstItem="pcA-i1-vbS" firstAttribute="leading" secondItem="sre-T4-K9d" secondAttribute="leading" constant="-1" id="uPc-3Q-tT7"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                    <size key="value" width="8" height="4"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.shadowOpacity" value="YES"/>
-            </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="menuImageView" destination="CSO-fI-edj" id="7nD-9S-llC"/>
                 <outlet property="orderCountLabel" destination="3Oz-tZ-oD0" id="dFL-kW-K7u"/>
                 <outlet property="priceLabel" destination="qhk-4U-qiu" id="sR5-oA-beB"/>
             </connections>

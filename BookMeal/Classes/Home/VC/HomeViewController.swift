@@ -58,6 +58,11 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: NSNotification.Name(rawValue: LoginSucessPostNotification), object: nil)
+
+        
+        
         self.title  = "加加点餐"
         
         let exitItem = UIBarButtonItem(title: "退出", style: .plain, target: self, action: #selector(logoutButtonClick))
@@ -77,6 +82,35 @@ class HomeViewController: BaseViewController {
         
     }
 
+    
+   @objc func loadData(){
+        
+    let shakeAnimation = CABasicAnimation.init(keyPath: "transform.scale")
+    shakeAnimation.duration = 0.3
+    shakeAnimation.fromValue = NSNumber.init(value: 1)
+    shakeAnimation.toValue = NSNumber.init(value: 2)
+    shakeAnimation.autoreverses = true
+    self.toPayView.menuImageView.layer.add(shakeAnimation, forKey: nil)
+    
+    self.toPayView.orderCountLabel.text = String(Int(self.toPayView.orderCountLabel.text!)!+1)
+
+    }
+    
+    
+    @objc func test(_ notify: Notification) {
+        
+        self.toPayView.orderCountLabel.text = "36"
+
+        
+
+        
+        
+        
+        print(notify.object ?? "nil")
+    }
+    
+    
+    
     func  initData()
     {
         let path:String = (Bundle.main.path(forResource: "MenuData", ofType: "json"))!
@@ -96,6 +130,10 @@ class HomeViewController: BaseViewController {
     
     
     func addSubView(){
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(test(_ :)), name: NSNotification.Name(rawValue: "TESTNOTIFY"), object: "the object content")
+
+        
         ///调用时传入frame和数据源
         let classifyTable = GroupTableView(frame: CGRect(x: 0,y: 0,width: screenWidth,height: screenHeight-64), MenuTypeArr: productTypeArrw, proNameArr: productNameArrw)
         classifyTable.productNameArr = productNameArrw
@@ -103,28 +141,49 @@ class HomeViewController: BaseViewController {
         self.view.addSubview(classifyTable)
         
         
-        
+
         
         
         toPayView.frame = CGRect(x: 0, y: SCREEN_H-64-59, width: SCREEN_W, height: 59)
+        toPayView.layer.shadowOffset = CGSize.init(width: 5, height: 5)
+//        toPayView.layer.borderColor = UIColor.red.cgColor
+        toPayView.layer.shadowOpacity = 1
+        view.addSubview(toPayView)
+
+        
+        self.orderListView.frame = CGRect(x: 0, y: SCREEN_H-64-59-201, width: SCREEN_W, height: 200)
+        self.orderListView.isHidden = true
+//        self.view.insertSubview(self.orderListView, belowSubview: self.toPayView)
+        self.view.addSubview(self.orderListView)
+        
         toPayView.showShopListButtonCLick = {
-                        
-            self.orderListView.frame = CGRect(x: 0, y: SCREEN_H-64-59-200, width: SCREEN_W, height: 200)
             
-            self.view.insertSubview(self.orderListView, belowSubview: self.toPayView)
+            self.toPayView.orderCountLabel.text = "88"
+            self.orderListView.isHidden = false
+
             
         }
         toPayView.removeShopListButtonCLick = {
             
-            self.orderListView.removeFromSuperview()
+            self.toPayView.orderCountLabel.text = String(Int(self.toPayView.orderCountLabel.text!)!-1)
+//            self.orderListView.removeFromSuperview()
+            self.orderListView.isHidden = true
+
+            BMAlertControllerTool.showAlert(currentVC: self, cancelBtn: "确定", meg: "你点击了")
+
+            
         }
         
-        view.addSubview(toPayView)
         
         
     }
     
-    
+//  @objc  func receiveValue(info:NSNotification)  {
+//        
+//        print(info.object as Any)
+//        
+//    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -134,3 +193,17 @@ class HomeViewController: BaseViewController {
 
 
 }
+
+extension ViewController:RightCellDelegate{
+    func btnClick(index: Int, name: String) {
+
+        BMAlertControllerTool.showAlert(currentVC: self, cancelBtn: "确定", meg: "你点击了\(name)")
+
+    }
+}
+
+
+
+
+
+
